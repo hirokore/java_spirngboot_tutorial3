@@ -14,10 +14,10 @@ import javax.annotation.PostConstruct;
 @Controller
 public class DemoController {
 
-	@Autowired
-	UserRepository repos;
+    @Autowired
+    UserRepository repos;
 
-	@RequestMapping(value="/", method = RequestMethod.GET)
+    @RequestMapping(value="/", method=RequestMethod.GET)
 	public ModelAndView index(@ModelAttribute("formModel") User user, ModelAndView mav) {
 		mav.setViewName("index");
 		Iterable<User> list = repos.findAll();
@@ -25,7 +25,7 @@ public class DemoController {
 		return mav;
 	}
 	
-	@RequestMapping(value = "/", method = RequestMethod.POST)
+    @RequestMapping(value="/", method=RequestMethod.POST)
 	@Transactional(readOnly = false)
 	public ModelAndView form(@ModelAttribute("formModel") User user, ModelAndView mav) {
 		repos.saveAndFlush(user);

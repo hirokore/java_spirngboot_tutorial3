@@ -26,12 +26,11 @@ table {
 	<hr />
 	<table border="1">
 		<tr>
-			<th>ID</th>
-			<th>名前</th>
+			<th>ID</th><th>名前</th>
 		</tr>
 		<tr th:each="obj : ${data}">
 			<td th:text="${obj.id}"></td>
-			<td th:text="name"></td>
+			<td th:text="${obj.name}"></td>
 		</tr>
 		</form>
 	</table>
