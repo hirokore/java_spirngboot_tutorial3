@@ -7,12 +7,12 @@ import javax.persistence.Id;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
-@Entity
-@Table(name="user")
+@Entity //エンティティクラスとしてクラスを定義
+@Table(name="user") //エンティティクラスに割り当てられるテーブル名
 public class User {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column
+	@Id //プライマリキーを指定(ユニークな識別番号的なやつ)
+	@GeneratedValue(strategy = GenerationType.AUTO) //AUTO：プライマリキーの値を自動採番する
+	@Column //カラム名
 	private int id;
 	
 	@Column
